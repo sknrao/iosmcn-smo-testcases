@@ -1,6 +1,6 @@
 
 *************************
-# IOS-MCN SMO Test Cases
+IOS-MCN SMO Test Cases
 *************************
 
 FOCOM
@@ -121,18 +121,31 @@ OAM
 ===
 Title
 -----
+O1 Events/Messages
 
 Description
 -----------
-
+This tests sends multiples of different kinds of O1 Events/messages to the ves-collector.
 
 
 Expected Result
 ---------------
+All events get added Message-Bus.
 
 
 Actual Result
 -------------
+
+
+.. image:: ./images/no-messages.png
+  :width: 50
+  :height: 50
+  :alt: Before sending events.
+
+.. image:: ./images/all-messages.png
+  :width: 50
+  :height: 50
+  :alt: After sending events.
 
 Title
 -----
