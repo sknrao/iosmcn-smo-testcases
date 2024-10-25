@@ -28,7 +28,7 @@ Expected Result
 
 Actual Result
 -------------
-
+Outcome: PASS/FAIL
 
 
 Title
@@ -54,7 +54,7 @@ Expected Result
 
 Actual Result
 -------------
-
+Outcome: PASS/FAIL
 
 Title
 -----
@@ -81,7 +81,7 @@ Expected Result
 
 Actual Result
 -------------
-
+Outcome: PASS/FAIL
 
 NFO
 ===
@@ -107,7 +107,7 @@ Expected Result
 
 Actual Result
 -------------
-
+Outcome: PASS/FAIL
 
 
 
@@ -127,7 +127,7 @@ Expected Result
 
 Actual Result
 -------------
-
+Outcome: PASS/FAIL
 
 
 Title
@@ -147,7 +147,7 @@ Expected Result
 
 Actual Result
 -------------
-
+Outcome: PASS/FAIL
 
 
 Title
@@ -166,6 +166,7 @@ Expected Result
 
 Actual Result
 -------------
+Outcome: PASS/FAIL
 
 
 Title
@@ -184,7 +185,7 @@ Expected Result
 
 Actual Result
 -------------
-
+Outcome: PASS/FAIL
 
 Title
 -----
@@ -202,6 +203,7 @@ Expected Result
 
 Actual Result
 -------------
+Outcome: PASS/FAIL
 
 
 Title
@@ -220,6 +222,7 @@ Expected Result
 
 Actual Result
 -------------
+Outcome: PASS/FAIL
 
 
 OAM
@@ -256,8 +259,205 @@ Actual Result
   :height: 300
   :alt: After sending events.
 
+
 Title
 -----
+CU/DU Registration - Event Based
+
+Description
+-----------
+This test checks if OAM can handle pnfRegistration event and get connected to OAI gNB.
+
+1. Ensure all containers of OAM are running.
+2. Start the OAI RAN
+
+
+Expected Result
+---------------
+
+1. pnfRegistration message is seen in the message bus.
+2. OAI gNB is connected to SDNC, and the same can be seen in ODLUX GUI.
+
+
+Actual Result
+-------------
+Outcome: PASS
+
+.. image:: ./images/cudu-registration-event.png
+  :width: 500
+  :height: 500
+
+Title
+-----
+CU/DU Registration - Manual
+
+Description
+-----------
+
+This test checks if OAM can connected to a running OAI gNB.
+
+1. Ensure all containers of OAM are running.
+2. Start the OAI RAN
+3. Open OLUX GUI
+4. Add details of OAI gNB and connect to it.
+
+
+Expected Result
+---------------
+
+1. OAI gNB is connected to SDNC, and the same can be seen in ODLUX GUI.
+
+
+Actual Result
+-------------
+Outcome: PASS
+
+.. image:: ./images/cudu-registration-manual.png
+  :width: 500
+  :height: 500
+
+
+Title
+-----
+RU Registration - GUI
+
+Description
+-----------
+This test checks if OAM can connected to a running vendor RU.
+
+1. Ensure all containers of OAM are running.
+2. Start the vendor RU
+3. Open OLUX GUI
+4. Add details of RU and connect to it.
+
+
+Expected Result
+---------------
+
+1. Vendor RU is connected to SDNC, and the same can be seen in ODLUX GUI.
+
+Actual Result
+-------------
+Outcome: PASS
+
+.. image:: ./images/ru-registration.png
+  :width: 500
+  :height: 500
+
+
+Title
+-----
+CU/DU Configuration - GUI
+
+Description
+-----------
+This test check if a parameter can be configured on gNB using SDNC/SDNC-Web
+
+1. Select the gNB you want to configure.
+2. Go to the appropriate parameter (Uplink and Downlink Frequency)
+3. Make the changes
+4. Commit.
+5. Repeat this for other parameters
+
+Expected Result
+---------------
+
+1. All parameters should get updated successfully
+
+
+Actual Result
+-------------
+Outcome: PASS (with some bug)
+
+.. image:: ./images/cudu-configuration.png
+  :width: 500
+  :height: 500
+
+.. image:: ./images/cudu-configuration-result.png
+  :width: 500
+  :height: 500
+
+
+Outcome: FAIL
+
+.. image:: ./images/cudu-configuration-failure.png
+  :width: 500
+  :height: 500
+
+
+Title
+-----
+RU Configuration - GUI
+
+Description
+-----------
+This test check if a parameter can be configured on RU using SDNC/SDNC-Web
+
+1. Select the RU you want to configure.
+2. Go to the appropriate parameter
+3. Make the changes
+4. Commit.
+5. Repeat this for other parameters
+
+
+
+Expected Result
+---------------
+
+1. All parameters should get updated successfully
+
+Actual Result
+-------------
+
+Outcome: FAIL
+
+.. image:: ./images/ru-configuration.png
+  :width: 500
+  :height: 500
+
+Title
+-----
+Performance Data gNB
+
+Description
+-----------
+
+This test checks if OAM can handle File-Ready events sent by gNB
+
+1. Ensure the gNB is connected and configured to send file-ready events.
+
+
+Expected Result
+---------------
+
+1. File ready message is received and processed.
+2. metrics are seen in the InfluxDB
+3. JSON and XML files are in the Minio-DB
+
+
+Actual Result
+-------------
+
+.. image:: ./images/pm-part1.png
+  :width: 500
+  :height: 500
+
+.. image:: ./images/pm-part2.png
+  :width: 500
+  :height: 500
+
+.. image:: ./images/pm-part3.png
+  :width: 500
+  :height: 500
+
+.. image:: ./images/pm-part4.png
+  :width: 500
+  :height: 500
+
+
+Title
+-----
+Performance Data - RU
 
 Description
 -----------
@@ -273,6 +473,7 @@ Actual Result
 
 Title
 -----
+Logs Handling - CU/DU
 
 Description
 -----------
@@ -288,6 +489,7 @@ Actual Result
 
 Title
 -----
+Logs Handling - RU
 
 Description
 -----------
@@ -301,6 +503,21 @@ Expected Result
 Actual Result
 -------------
 
+Title
+-----
+OAM Core
+
+Description
+-----------
+
+
+
+Expected Result
+---------------
+
+
+Actual Result
+-------------
 
 
 NON-RT-RIC
