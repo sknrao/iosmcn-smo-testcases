@@ -3,6 +3,22 @@
 IOS-MCN SMO Test Cases
 *************************
 
+Summary for Release-1:
+
++------+-------------------+--------+
+| sl.no|  Item             |   Count|
++======+===================+========+
+|  1   | Total Testcases   |    20  |
++------+-------------------+--------+
+|  2   | Testcases run     |    12  |
++------+-------------------+--------+
+|  3   | Tests Pass        |    10  |
++------+-------------------+--------+
+|  4   | Tests Fail        |     2  |
++------+-------------------+--------+
+
+
+
 FOCOM
 =====
 
@@ -56,6 +72,11 @@ Actual Result
 -------------
 Outcome: PASS/FAIL
 
+.. image:: ./images/k8s-cluster.png
+  :width: 600
+  :height: 800
+
+
 Title
 -----
 Node Preparation for RAN Containers.
@@ -83,8 +104,11 @@ Actual Result
 -------------
 Outcome: PASS/FAIL
 
+
+
 NFO
 ===
+
 Title
 -----
 
@@ -120,13 +144,12 @@ Description
 -----------
 
 
-
 Expected Result
 ---------------
 
 
-Actual Result
--------------
+Actual Result:
+--------------
 Outcome: PASS/FAIL
 
 
@@ -139,16 +162,26 @@ Deployment of OAM
 Description
 -----------
 
+Test the successful deployment of OAM
+1. Clone the ios-mcn-smo/oam repo
+2. Run adapt-to-environment -i <ip> -d <domain-name>
+3. run docker-setup.sh
 
 
 Expected Result
 ---------------
+
+1. All containers should be up and running.
 
 
 Actual Result
 -------------
 Outcome: PASS/FAIL
 
+
+.. image:: ./images/containers-oam.png
+  :width: 600
+  :height: 800
 
 Title
 -----
@@ -252,12 +285,11 @@ Actual Result
 .. image:: ./images/no-messages.png
   :width: 300
   :height: 200
-  :alt: Before sending events.
+
 
 .. image:: ./images/all-messages.png
   :width: 300
   :height: 300
-  :alt: After sending events.
 
 
 Title
